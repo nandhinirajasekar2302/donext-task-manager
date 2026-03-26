@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="todo">
+        <h1>DoNext Task Manager 🚀</h1>
+
+        <!-- INPUT SECTION -->
+        <div class="row">
+            <input type="text" id="ipBox" placeholder="Enter task">
+
+            <select id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <select id="tag">
+                <option value="General">General</option>
+                <option value="Work">Work</option>
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+            </select>
+
+            <input type="date" id="dueDate">
+
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <input type="text" id="searchBox" placeholder="Search..." onkeyup="renderTasks()">
+
+            <select id="filter" onchange="renderTasks()">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            <button onclick="toggleTheme()">🌙</button>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="dashboard">
+            <div>Total: <span id="totalTasks">0</span></div>
+            <div>Completed: <span id="completedTasks">0</span></div>
+            <div>Overdue: <span id="overdueTasks">0</span></div>
+        </div>
+
+        <!-- PROGRESS -->
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+        <p id="progressText"></p>
+
+        <!-- TASK LIST -->
+        <ul id="Tlist"></ul>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

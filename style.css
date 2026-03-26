@@ -1,0 +1,133 @@
+:root {
+    --primary: #2563EB;
+    --bg: #F1F5F9;
+    --card: #FFFFFF;
+    --text: #0F172A;
+    --accent: #22C55E;
+    --danger: #EF4444;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.todo {
+    width: 100%;
+    max-width: 650px;
+    background: var(--card);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row, .controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* TASK */
+ul li {
+    list-style: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border-left: 6px solid var(--primary);
+    animation: fadeIn 0.3s ease;
+}
+
+.task-text { font-weight: 600; }
+.task-meta { font-size: 12px; color: #64748b; }
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.priority-High { border-left: red 6px solid; }
+.priority-Medium { border-left: orange 6px solid; }
+.priority-Low { border-left: green 6px solid; }
+
+.checked .task-text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.delete-btn { color: red; cursor: pointer; }
+.edit-btn { color: blue; cursor: pointer; }
+
+/* PROGRESS */
+.progress-bar {
+    height: 8px;
+    background: #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#progressFill {
+    height: 100%;
+    background: green;
+    width: 0%;
+}
+
+/* TOAST */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.dark-mode {
+    background: #111;
+}
+
+.dark-mode .todo {
+    background: #222;
+    color: white;
+}
